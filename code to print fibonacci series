@@ -1,0 +1,10 @@
+X=int(input("enter till which term you want to print series:-"))
+A=0
+B=1
+print(A)
+print(B)
+for i in range(0,X-2):
+    Z=A+B
+    print(Z)
+    A=B
+    B=Z
