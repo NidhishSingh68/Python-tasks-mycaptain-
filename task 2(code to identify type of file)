@@ -1,0 +1,3 @@
+A=input("input file name:-")
+X=A.split('.')
+print("extension of file is:",X[-1])
