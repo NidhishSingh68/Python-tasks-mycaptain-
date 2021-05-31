@@ -1,3 +1,8 @@
 A=input("input file name:-")
 X=A.split('.')
-print("extension of file is:",X[-1])
+if X[-1]=="py":
+    X="python"
+else:
+    X=X[-1]
+print("extension of file is:",X)
+
