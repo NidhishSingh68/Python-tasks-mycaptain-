@@ -1,0 +1,27 @@
+import csv
+i=0
+def write_into_csv(info_list):
+	with open('sinfo.csv','a',newline='') as csv_file :
+		writer=csv.writer(csv_file)
+		if i==0:
+			writer.writerow(["Name","age","telephone number","Email Id"])
+		writer.writerow(info_list)
+if __name__=='__main__':
+	condition =True
+	num=1
+	while( condition):
+		sinfo=input("Enter student info for student #{} in the following format( name age telephone number and Emai Id):".format(num))
+		sinfo_list=sinfo.split(' ')
+		print("Entered information is :(1) name: {} (2)age: {} (3) telephone number: {} (4) EmailID: {}".format(sinfo_list[0],sinfo_list[1],sinfo_list[2],sinfo_list[3]))
+		Ccheck=input("is the entered information correct?(Y/N): ")
+		if Ccheck=="Y":
+			write_into_csv(sinfo_list)
+			cond_check=input("enter Y/N if you want to enter information for another student:")
+			if cond_check=="Y":
+				condition=True
+				num=num+1
+				i=i+1
+			elif cond_check=="N":
+				condition=False
+		elif Ccheck=="N":
+			print("Please Re-Enter the values:")
